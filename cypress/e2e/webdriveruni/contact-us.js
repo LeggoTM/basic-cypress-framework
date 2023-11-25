@@ -3,6 +3,8 @@
 describe('Test Contact Us form', () => {
   it('Should be able to submit form successfully', () => {
     cy.visit('https://webdriveruniversity.com/Contact-Us/contactus.html');
+    cy.title().should('include', 'Contact Us');
+    cy.url().should('match', /.*\/contactus/);
     cy.get('[name="first_name"]').type('Tanmay');
     cy.get('[name="last_name"]').type('Mohapatra');
     cy.get('[name="email"]').type('tanmay@mail.com');
