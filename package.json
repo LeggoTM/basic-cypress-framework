@@ -9,6 +9,7 @@
   "author": "Tanmay Mohapatra",
   "license": "ISC",
   "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
     "cypress": "^13.6.0"
   }
 }
