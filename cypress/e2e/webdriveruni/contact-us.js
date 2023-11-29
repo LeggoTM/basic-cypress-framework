@@ -22,4 +22,16 @@ describe('Test Contact Us form', () => {
     cy.get('[value="SUBMIT"]').click();
     cy.get('body').should('contain', 'Error: all fields are required');
   });
+
+  it('Implement multi tab handing', () => {
+    cy.visit('https://webdriveruniversity.com/');
+    cy.get('#contact-us').invoke('removeAttr', 'target').click();
+    cy.get('.section_header').should('have.text', 'CONTACT US');
+    cy.get('[name="first_name"]').type('Tanmay');
+    cy.get('[name="last_name"]').type('Mohapatra');
+    // cy.get('[name="email"]').type('tanmay@mail.com');
+    cy.get('[name="message"]').type('This is a test message');
+    cy.get('[value="SUBMIT"]').click();
+    cy.get('body').should('contain', 'Error: all fields are required');
+  });
 });
