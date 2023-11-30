@@ -18,7 +18,7 @@ describe('Implements alias and invoke', () => {
         cy.get('@productCount').find('.productcart').should('have.attr', 'title', 'Add to Cart');
     });
 
-    it.only('Calculate total of normal and sale product prices', () => {
+    it('Calculate total of normal and sale product prices', () => {
         cy.visit('https://automationteststore.com/');
         cy.get('.thumbnail').as('homeProducts');
         cy.get('.thumbnail').find('.oneprice').invoke('text').as('productPrice');
